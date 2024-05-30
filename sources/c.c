@@ -6,8 +6,16 @@
 //
 //---------------------------------------------------------------------------------------------------------------------
 //
+//header files:
+
 #include "c.h"
+
+#ifndef EXTENSION
+#define EXTENSION
 #include "extension.c"
+#endif
+//function prototypes:
+
 void check(void);
 //---------------------------------------------------------------------------------------------------------------------
 ///
@@ -36,15 +44,18 @@ void check(void)
   struct Example example1 = { 3, "Jeremy", 5432.432433};
   struct Example *po = &example1;
   fprintf(stdout, "%p ,\t\t %p\n", (void *)&example1, (void *)&(po->type));//the addresses on the left are the same
-  
+  fprintf(stdout, "%d ", EOF);
   int arr[] = {1,2,3,4};
   int a[3][3] = {{1,2,3},{4,5,6},{7,8,9}};
-  int *p = &arr[2];//p pointer to the second element
+  char s[40];
+  snprintf(s, 19, "There are");
+  puts(s);
+  // int *p = &arr[2];//p pointer to the second element
   // fprintf(stdout, "\n%d %d", ++*p, 2[arr]);
   fprintf(stdout, "%p %p",(void *)*( a + 2), (void *)&a[2][0]);//the address of the first element in the third row;
-  char *pointer[10];//an array of 10 pointers to type char
-  char (*pointer_2)[10];//a pointer to an array of 10 elems of type char
-  *p++;
+  // char *pointer[10];//an array of 10 pointers to type char
+  // char (*pointer_2)[10];//a pointer to an array of 10 elems of type char
+  // *p++;
   // fprintf(stdout, "%d", *p);
 }
 //we will store the date in the format: task@@date\n
